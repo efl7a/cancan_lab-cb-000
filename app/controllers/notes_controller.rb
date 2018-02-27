@@ -16,12 +16,8 @@ class NotesController < ApplicationController
 
   def update
     @note = Note.find(params[:id])
-    if @note.user == current_user
       @note.update(note_params)
       redirect_to '/'
-    else
-      redirect_to '/'
-    end
   end
 
   def delete
